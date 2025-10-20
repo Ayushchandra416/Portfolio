@@ -33,7 +33,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle>💼 LinkedIn</CardTitle>
-              <CardDescription>Let's connect professionally</CardDescription>
+              <CardDescription>Let&apos;s connect professionally</CardDescription>
             </CardHeader>
             <CardContent>
               <Button asChild variant="outline">

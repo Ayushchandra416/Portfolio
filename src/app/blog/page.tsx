@@ -81,7 +81,7 @@ export default function BlogPage() {
           <CardHeader>
             <CardTitle>🚀 More Content Coming Soon</CardTitle>
             <CardDescription>
-              These blog posts are placeholder data. In the next steps, we'll integrate
+              These blog posts are placeholder data. In the next steps, we&apos;ll integrate
               Sanity CMS to manage real blog content with rich text, images, and more!
             </CardDescription>
           </CardHeader>
