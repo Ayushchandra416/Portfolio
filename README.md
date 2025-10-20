@@ -395,3 +395,5 @@ For questions or issues:
 **Live Demo**: [your-portfolio.vercel.app](https://your-portfolio.vercel.app)
 **Repository**: [github.com/yourusername/portfolio](https://github.com/yourusername/portfolio)
 
+<!-- Trigger redeploy: Updated by GitHub Copilot on 2025-10-20 -->
+
