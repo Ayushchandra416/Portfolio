@@ -1,52 +1,158 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { GraduationCap, Code, Rocket, Award } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8">
-      <main className="max-w-4xl mx-auto text-center">
-        <h1 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          Welcome to My Portfolio
-        </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-          Full Stack Developer | Next.js | TypeScript | React
-        </p>
-        
-        <div className="flex gap-4 justify-center mb-12">
-          <Link 
-            href="/about"
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            About Me
-          </Link>
-          <Link 
-            href="/projects"
-            className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
-          >
-            View Projects
-          </Link>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <GraduationCap className="w-4 h-4 mr-2" />
+              B.Tech Student at VIT Bhopal
+            </Badge>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+                Hi, I&apos;m{" "}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Ayush Chandra
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              Aspiring Software Engineer | Full Stack Developer | Tech Enthusiast
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Currently pursuing B.Tech in Computer Science at VIT Bhopal University.
+              Passionate about building innovative solutions and learning cutting-edge technologies.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center pt-6">
+              <Button asChild size="lg">
+                <Link href="/projects">
+                  <Rocket className="mr-2 h-5 w-5" />
+                  View My Projects
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/about">
+                  Learn More About Me
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/contact">
+                  Get In Touch
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-            <h3 className="text-2xl font-bold mb-2">⚡ Fast</h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Built with Next.js 14 and optimized for performance
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-            <h3 className="text-2xl font-bold mb-2">🎨 Modern</h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Styled with Tailwind CSS and Shadcn/ui components
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-            <h3 className="text-2xl font-bold mb-2">🔒 Type-Safe</h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Written in TypeScript for better code quality
-            </p>
+      {/* Quick Stats */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <Card>
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-4xl font-bold text-primary">3+</CardTitle>
+                <CardDescription>Projects Completed</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-4xl font-bold text-primary">10+</CardTitle>
+                <CardDescription>Technologies Used</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-4xl font-bold text-primary">100%</CardTitle>
+                <CardDescription>Dedication</CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader className="text-center pb-2">
+                <CardTitle className="text-4xl font-bold text-primary">24/7</CardTitle>
+                <CardDescription>Learning Mode</CardDescription>
+              </CardHeader>
+            </Card>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* What I Do */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">What I Do</h2>
+            <p className="text-lg text-muted-foreground">
+              Exploring and mastering various domains of technology
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Code className="w-12 h-12 mb-4 text-primary" />
+                <CardTitle>Web Development</CardTitle>
+                <CardDescription>
+                  Building modern, responsive web applications using React, Next.js, and TypeScript
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Rocket className="w-12 h-12 mb-4 text-primary" />
+                <CardTitle>Problem Solving</CardTitle>
+                <CardDescription>
+                  Passionate about Data Structures, Algorithms, and competitive programming
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Award className="w-12 h-12 mb-4 text-primary" />
+                <CardTitle>Continuous Learning</CardTitle>
+                <CardDescription>
+                  Always exploring new technologies, frameworks, and best practices
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack Preview */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tech Stack</h2>
+            <p className="text-lg text-muted-foreground">
+              Technologies I work with
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+            {[
+              "JavaScript", "TypeScript", "React", "Next.js", "Node.js",
+              "Python", "C++", "Java", "HTML/CSS", "Tailwind CSS",
+              "Git", "GitHub", "VS Code", "MongoDB", "SQL"
+            ].map((tech) => (
+              <Badge key={tech} variant="secondary" className="text-sm py-2 px-4">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

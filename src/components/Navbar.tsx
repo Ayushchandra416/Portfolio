@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -20,7 +21,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold">
-            Portfolio
+            Ayush Chandra
           </Link>
 
           {/* Navigation Links */}
@@ -44,9 +45,12 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <Button asChild>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
+          </div>
         </div>
       </div>
     </nav>
