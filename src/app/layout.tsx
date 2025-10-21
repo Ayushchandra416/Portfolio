@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThreeRoot } from "@/components/three/ThreeRoot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +26,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* 3D Background and transition overlay (guarded + error boundary) */}
-          <ThreeRoot />
-
           <Navbar />
-          <main className="flex-grow relative z-10">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
