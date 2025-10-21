@@ -27,7 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* 3D Background and transition overlay */}
+          {/* 3D Background and transition overlay (guarded + error boundary) */}
           <ThreeRoot />
 
           <Navbar />
