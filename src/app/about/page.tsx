@@ -3,37 +3,49 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function AboutPage() {
   const skills = {
-    frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
-    backend: ["Node.js", "PostgreSQL", "Supabase", "REST APIs"],
-    tools: ["Git", "VS Code", "Vercel", "npm"],
+    languages: ["Java", "C++", "Python", "JavaScript", "TypeScript"],
+    frontend: ["React", "Next.js", "Tailwind CSS"],
+    backend: ["Node.js", "REST APIs"],
+    database: ["MySQL", "MongoDB"],
+    tools: ["Git", "GitHub", "VS Code"],
   };
 
-  const experience = [
-    {
-      title: "Full Stack Developer",
-      company: "Tech Company",
-      period: "2023 - Present",
-      description: "Building modern web applications with Next.js and TypeScript",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Startup Inc",
-      period: "2022 - 2023",
-      description: "Developed responsive user interfaces with React and Tailwind CSS",
-    },
-  ];
+  const education = {
+    degree: "B.Tech in Computer Science and Engineering",
+    college: "VIT Bhopal University",
+    year: "3rd Year",
+    duration: "2023 - 2027 (expected)",
+  };
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Hero Section */}
+        {/* Intro Section */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">About Me</h1>
           <p className="text-xl text-muted-foreground">
-            Full Stack Developer passionate about building exceptional digital experiences
-            with modern web technologies.
+            I&apos;m Ayush Chandra, a 3rd year CSE student at VIT Bhopal University with a strong focus on
+            modern web development. I enjoy turning ideas into real products using React, Next.js,
+            TypeScript, and robust backends.
           </p>
         </div>
+
+        {/* Education */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Education</CardTitle>
+            <CardDescription>Academic background</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap items-center gap-4">
+              <Badge variant="secondary">{education.year}</Badge>
+              <div>
+                <p className="font-semibold">{education.degree}</p>
+                <p className="text-muted-foreground">{education.college} • {education.duration}</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Skills Section */}
         <Card className="mb-8">
@@ -45,6 +57,16 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
+              <h3 className="font-semibold mb-2 text-sm text-muted-foreground">Languages</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.languages.map((skill) => (
+                  <Badge key={skill} variant="secondary">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div>
               <h3 className="font-semibold mb-2 text-sm text-muted-foreground">Frontend</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.frontend.map((skill) => (
@@ -55,9 +77,19 @@ export default function AboutPage() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-2 text-sm text-muted-foreground">Backend & Database</h3>
+              <h3 className="font-semibold mb-2 text-sm text-muted-foreground">Backend</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.backend.map((skill) => (
+                  <Badge key={skill} variant="secondary">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-2 text-sm text-muted-foreground">Databases</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.database.map((skill) => (
                   <Badge key={skill} variant="secondary">
                     {skill}
                   </Badge>
@@ -77,26 +109,20 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        {/* Experience Section */}
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold">Experience</h2>
-          {experience.map((job, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle>{job.title}</CardTitle>
-                    <CardDescription>{job.company}</CardDescription>
-                  </div>
-                  <Badge variant="outline">{job.period}</Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{job.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        {/* Focus Area */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Focus Area</CardTitle>
+            <CardDescription>Web development</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              I focus on building scalable, responsive web applications with clean, maintainable code.
+              My typical stack includes Next.js/React on the frontend, Node.js APIs, and databases like
+              MySQL and MongoDB, all managed with Git and deployed to platforms like Vercel or Railway.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export default function Home() {
           <div className="text-center space-y-6">
             <Badge variant="secondary" className="mb-4">
               <GraduationCap className="w-4 h-4 mr-2" />
-              B.Tech Student at VIT Bhopal
+              CSE • 3rd Year • VIT Bhopal University
             </Badge>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
@@ -24,11 +24,11 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Aspiring Software Engineer | Full Stack Developer | Tech Enthusiast
+              Aspiring Software Engineer • Full Stack Web Developer • Tech Enthusiast
             </p>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Currently pursuing B.Tech in Computer Science at VIT Bhopal University.
+              Currently pursuing B.Tech in Computer Science and Engineering at VIT Bhopal University.
               Passionate about building innovative solutions and learning cutting-edge technologies.
             </p>
             
@@ -141,11 +141,7 @@ export default function Home() {
           </div>
           
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {[
-              "JavaScript", "TypeScript", "React", "Next.js", "Node.js",
-              "Python", "C++", "Java", "HTML/CSS", "Tailwind CSS",
-              "Git", "GitHub", "VS Code", "MongoDB", "SQL"
-            ].map((tech) => (
+            {["Java", "C++", "Python", "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS", "MySQL", "MongoDB", "Git", "GitHub"].map((tech) => (
               <Badge key={tech} variant="secondary" className="text-sm py-2 px-4">
                 {tech}
               </Badge>

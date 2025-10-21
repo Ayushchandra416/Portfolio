@@ -4,6 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import dynamic from "next/dynamic";
+
+const ThreeToggle = dynamic(() => import("@/components/three/ThreeToggle").then(m => m.ThreeToggle), { ssr: false });
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -47,6 +50,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="flex items-center gap-2">
             <ThemeToggle />
+            <ThreeToggle />
             <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
