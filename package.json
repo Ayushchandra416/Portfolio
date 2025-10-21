@@ -28,6 +28,9 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.160.1"
   },
+  "overrides": {
+    "three-mesh-bvh": "^0.8.0"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
