@@ -6,18 +6,18 @@ import React, { useMemo } from "react";
 import { useThreeEnabled } from "./ThreeProvider";
 
 function Scene() {
-  // Static starfield as a lightweight background
+  // Calmer starfield for a subtle backdrop
   return (
     <>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.35} color="#94a3b8" />
       <Stars
-        radius={60}
-        depth={40}
-        count={1200}
-        factor={3}
+        radius={70}
+        depth={60}
+        count={1000}
+        factor={2.5}
         saturation={0}
         fade
-        speed={0.6}
+        speed={0.18}
       />
     </>
   );
