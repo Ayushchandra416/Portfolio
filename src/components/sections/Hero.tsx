@@ -25,7 +25,21 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-32">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-32">
+        {/* Absolute image for desktop/tablet to place exactly in the highlighted area */}
+        <div className="hidden md:block absolute right-6 lg:right-8 top-16 lg:top-20 w-[320px] lg:w-[400px] xl:w-[460px]">
+          <div className="relative aspect-[3/4] overflow-hidden">
+            <Image
+              src={src}
+              alt="Portrait of Ayush Chandra"
+              fill
+              sizes="(min-width: 1280px) 30vw, (min-width: 1024px) 35vw, 45vw"
+              priority
+              className="object-cover object-top"
+              onError={() => setSrc("/portrait-placeholder.svg")}
+            />
+          </div>
+        </div>
   <div className="grid items-start gap-10 md:grid-cols-2">
           {/* Left: Copy */}
           <div>
@@ -61,14 +75,14 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Image */}
-          <div className="relative mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl -mt-6 md:-mt-10">
-            <div className="relative h-[52vh] md:h-[58vh] lg:h-[60vh] overflow-hidden">
+          {/* Right: Image (mobile) */}
+          <div className="relative mx-auto w-full max-w-md md:hidden">
+            <div className="relative aspect-[3/4] overflow-hidden">
               <Image
                 src={src}
                 alt="Portrait of Ayush Chandra"
                 fill
-                sizes="(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw"
+                sizes="85vw"
                 priority
                 className="object-cover object-top"
                 onError={() => setSrc("/portrait-placeholder.svg")}
