@@ -7,7 +7,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export function Hero() {
-  const [src, setSrc] = React.useState<string>("/ayush-hero.jpg");
+  const [src, setSrc] = React.useState<string>("/ayush-hero.png");
   return (
     <section className="relative isolate overflow-hidden">
       {/* Background gradient */}
