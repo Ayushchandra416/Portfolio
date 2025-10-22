@@ -62,15 +62,15 @@ export function Hero() {
           </div>
 
           {/* Right: Image */}
-          <div className="relative mx-auto w-full max-w-md md:max-w-lg">
+          <div className="relative mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
                 src={src}
                 alt="Portrait of Ayush Chandra"
                 fill
-                sizes="(min-width: 768px) 40vw, 80vw"
+                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 45vw, 85vw"
                 priority
-                className="object-cover object-top"
+                className="object-cover object-[center_20%]"
                 onError={() => setSrc("/portrait-placeholder.svg")}
               />
             </div>
