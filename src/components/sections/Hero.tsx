@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 import { motion } from "framer-motion";
 
 export function Hero() {
+  const [src, setSrc] = React.useState<string>("/ayush-hero.jpg");
   return (
     <section className="relative isolate overflow-hidden">
       {/* Background gradient */}
@@ -61,15 +63,15 @@ export function Hero() {
 
           {/* Right: Image */}
           <div className="relative mx-auto w-full max-w-md md:max-w-lg">
-            {/* Note: place your file in /public and update src below if needed */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border bg-card shadow-2xl">
+            <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/ayush-hero.jpg"
+                src={src}
                 alt="Portrait of Ayush Chandra"
                 fill
                 sizes="(min-width: 768px) 40vw, 80vw"
                 priority
-                className="object-cover"
+                className="object-cover object-center"
+                onError={() => setSrc("/portrait-placeholder.svg")}
               />
             </div>
           </div>
