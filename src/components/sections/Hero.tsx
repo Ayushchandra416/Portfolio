@@ -26,7 +26,7 @@ export function Hero() {
       />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 md:py-32">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+  <div className="grid items-start gap-10 md:grid-cols-2">
           {/* Left: Copy */}
           <div>
             <motion.h1
@@ -62,15 +62,15 @@ export function Hero() {
           </div>
 
           {/* Right: Image */}
-          <div className="relative mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl">
-            <div className="relative aspect-[3/4] overflow-hidden">
+          <div className="relative mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl -mt-6 md:-mt-10">
+            <div className="relative h-[52vh] md:h-[58vh] lg:h-[60vh] overflow-hidden">
               <Image
                 src={src}
                 alt="Portrait of Ayush Chandra"
                 fill
-                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 45vw, 85vw"
+                sizes="(min-width: 1024px) 40vw, (min-width: 768px) 45vw, 85vw"
                 priority
-                className="object-cover object-[center_20%]"
+                className="object-cover object-top"
                 onError={() => setSrc("/portrait-placeholder.svg")}
               />
             </div>
